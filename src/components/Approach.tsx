@@ -56,8 +56,18 @@ const Approach = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
             {steps.map((step, index) => (
               <div key={index} className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                <div className={`rounded-full p-4 w-fit mx-auto mb-6 ${getColorClasses(step.color)}`}>
-                  <step.icon className="w-8 h-8" />
+                <div className={`rounded-2xl p-4 w-fit mx-auto mb-6 bg-gradient-to-br ${
+                  step.color === 'blue' ? 'from-blue-100 to-indigo-100 hover:from-blue-200 hover:to-indigo-200' :
+                  step.color === 'emerald' ? 'from-emerald-100 to-teal-100 hover:from-emerald-200 hover:to-teal-200' :
+                  step.color === 'amber' ? 'from-amber-100 to-orange-100 hover:from-amber-200 hover:to-orange-200' :
+                  'from-red-100 to-pink-100 hover:from-red-200 hover:to-pink-200'
+                } transition-all duration-300 hover:scale-110 hover:rotate-6 group`}>
+                  <step.icon className={`w-8 h-8 ${
+                    step.color === 'blue' ? 'text-blue-600 group-hover:text-indigo-600' :
+                    step.color === 'emerald' ? 'text-emerald-600 group-hover:text-teal-600' :
+                    step.color === 'amber' ? 'text-amber-600 group-hover:text-orange-600' :
+                    'text-red-600 group-hover:text-pink-600'
+                  } transition-colors duration-300`} />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">
                   {step.title}

@@ -41,12 +41,16 @@ const Navigation = () => {
             onClick={() => scrollToSection('hero')}
             className="flex items-center gap-3 font-bold text-xl hover:scale-105 transition-transform"
           >
-            <div className={`rounded-full p-2 ${
-              isScrolled ? 'bg-blue-100' : 'bg-white/20 backdrop-blur-sm'
+            <div className={`rounded-2xl p-2 transition-all duration-300 hover:scale-110 hover:rotate-6 group ${
+              isScrolled 
+                ? 'bg-gradient-to-br from-blue-100 to-indigo-100 hover:from-blue-200 hover:to-indigo-200' 
+                : 'bg-gradient-to-br from-white/20 to-blue-200/20 backdrop-blur-sm hover:from-white/30 hover:to-blue-200/30'
             }`}>
               <BarChart3 className={`w-6 h-6 ${
-                isScrolled ? 'text-blue-600' : 'text-white'
-              }`} />
+                isScrolled 
+                  ? 'text-blue-600 group-hover:text-indigo-600' 
+                  : 'text-white group-hover:text-blue-100'
+              } transition-colors duration-300`} />
             </div>
             <span className={isScrolled ? 'text-gray-900' : 'text-white'}>
               PL Predictor

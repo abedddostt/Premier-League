@@ -7,8 +7,8 @@ const TeamCredits = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex justify-center mb-8">
-            <div className="bg-blue-100 rounded-full p-4">
-              <Users className="w-12 h-12 text-blue-600" />
+            <div className="bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl p-6 hover:from-blue-200 hover:to-purple-200 transition-all duration-300 hover:scale-110 hover:rotate-3">
+              <Users className="w-12 h-12 text-blue-600 hover:text-purple-600 transition-colors duration-300" />
             </div>
           </div>
           
@@ -23,8 +23,8 @@ const TeamCredits = () => {
           
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="bg-white rounded-xl shadow-lg p-8">
-              <div className="bg-blue-100 rounded-full p-3 w-fit mx-auto mb-6">
-                <Award className="w-8 h-8 text-blue-600" />
+              <div className="bg-gradient-to-br from-blue-100 to-indigo-100 rounded-2xl p-4 w-fit mx-auto mb-6 hover:from-blue-200 hover:to-indigo-200 transition-all duration-300 hover:scale-110 hover:rotate-6 group">
+                <Award className="w-8 h-8 text-blue-600 group-hover:text-indigo-600 transition-colors duration-300" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
                 MIT Emerging Talent Program
@@ -36,8 +36,8 @@ const TeamCredits = () => {
             </div>
             
             <div className="bg-white rounded-xl shadow-lg p-8">
-              <div className="bg-emerald-100 rounded-full p-3 w-fit mx-auto mb-6">
-                <Github className="w-8 h-8 text-emerald-600" />
+              <div className="bg-gradient-to-br from-emerald-100 to-teal-100 rounded-2xl p-4 w-fit mx-auto mb-6 hover:from-emerald-200 hover:to-teal-200 transition-all duration-300 hover:scale-110 hover:rotate-6 group">
+                <Github className="w-8 h-8 text-emerald-600 group-hover:text-teal-600 transition-colors duration-300" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
                 Open Source Research

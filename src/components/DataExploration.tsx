@@ -125,8 +125,16 @@ const DataExploration = () => {
                 <div className={`h-2 ${data.color === 'red' ? 'bg-red-500' : data.color === 'emerald' ? 'bg-emerald-500' : 'bg-blue-500'}`}></div>
 
                 <div className="p-8">
-                  <div className={`rounded-full p-3 w-fit mb-4 ${getColorClasses(data.color)}`}>
-                    <data.icon className={`w-8 h-8 ${getColorClasses(data.color, 'text')}`} />
+                  <div className={`rounded-2xl p-4 w-fit mb-4 bg-gradient-to-br ${
+                    data.color === 'red' ? 'from-red-100 to-orange-100 hover:from-red-200 hover:to-orange-200' :
+                    data.color === 'emerald' ? 'from-emerald-100 to-teal-100 hover:from-emerald-200 hover:to-teal-200' :
+                    'from-blue-100 to-indigo-100 hover:from-blue-200 hover:to-indigo-200'
+                  } transition-all duration-300 hover:scale-110 hover:rotate-6 group`}>
+                    <data.icon className={`w-8 h-8 ${
+                      data.color === 'red' ? 'text-red-600 group-hover:text-orange-600' :
+                      data.color === 'emerald' ? 'text-emerald-600 group-hover:text-teal-600' :
+                      'text-blue-600 group-hover:text-indigo-600'
+                    } transition-colors duration-300`} />
                   </div>
 
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">
@@ -239,7 +247,11 @@ const DataExploration = () => {
 
           <div className="bg-gradient-to-r from-blue-50 to-emerald-50 rounded-2xl p-8 md:p-12">
             <div className="text-center mb-8">
-              <TrendingUp className="w-12 h-12 text-emerald-600 mx-auto mb-4" />
+              <div className="flex justify-center mb-4">
+                <div className="bg-gradient-to-br from-emerald-100 to-blue-100 rounded-2xl p-6 hover:from-emerald-200 hover:to-blue-200 transition-all duration-300 hover:scale-110 hover:rotate-3">
+                  <TrendingUp className="w-12 h-12 text-emerald-600 hover:text-blue-600 transition-colors duration-300" />
+                </div>
+              </div>
               <h3 className="text-3xl font-bold text-gray-900 mb-4">
                 Key Discoveries
               </h3>

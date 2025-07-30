@@ -72,8 +72,8 @@ const KeyInsights = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <div className="flex justify-center mb-6">
-              <div className="bg-emerald-100 rounded-full p-4">
-                <Lightbulb className="w-12 h-12 text-emerald-600" />
+              <div className="bg-gradient-to-br from-emerald-100 to-yellow-100 rounded-2xl p-6 hover:from-emerald-200 hover:to-yellow-200 transition-all duration-300 hover:scale-110 hover:rotate-3">
+                <Lightbulb className="w-12 h-12 text-emerald-600 hover:text-yellow-600 transition-colors duration-300" />
               </div>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -93,8 +93,16 @@ const KeyInsights = () => {
                   key={index}
                   className={`${styles.bg} ${styles.border} border rounded-xl p-8 hover:shadow-lg transition-all duration-300 hover:-translate-y-1`}
                 >
-                  <div className={`${styles.iconBg} rounded-full p-3 w-fit mb-6`}>
-                    <insight.icon className={`w-8 h-8 ${styles.iconColor}`} />
+                  <div className={`rounded-2xl p-4 w-fit mb-6 bg-gradient-to-br ${
+                    insight.type === 'confident' ? 'from-emerald-100 to-teal-100 hover:from-emerald-200 hover:to-teal-200' :
+                    insight.type === 'moderate' ? 'from-blue-100 to-indigo-100 hover:from-blue-200 hover:to-indigo-200' :
+                    'from-amber-100 to-orange-100 hover:from-amber-200 hover:to-orange-200'
+                  } transition-all duration-300 hover:scale-110 hover:rotate-6 group`}>
+                    <insight.icon className={`w-8 h-8 ${
+                      insight.type === 'confident' ? 'text-emerald-600 group-hover:text-teal-600' :
+                      insight.type === 'moderate' ? 'text-blue-600 group-hover:text-indigo-600' :
+                      'text-amber-600 group-hover:text-orange-600'
+                    } transition-colors duration-300`} />
                   </div>
                   
                   <h3 className={`text-xl font-bold mb-4 ${styles.accent}`}>
@@ -122,8 +130,8 @@ const KeyInsights = () => {
             
             <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-                <div className="bg-emerald-400 rounded-full p-3 w-fit mb-4">
-                  <Target className="w-6 h-6 text-white" />
+                <div className="bg-gradient-to-br from-emerald-100 to-teal-100 rounded-2xl p-3 w-fit mb-4 hover:from-emerald-200 hover:to-teal-200 transition-all duration-300 hover:scale-110 hover:rotate-6 group">
+                  <Target className="w-6 h-6 text-emerald-600 group-hover:text-teal-600 transition-colors duration-300" />
                 </div>
                 <h4 className="text-lg font-bold mb-3">Recruitment Strategy</h4>
                 <ul className="space-y-2 text-sm text-blue-100">
@@ -134,8 +142,8 @@ const KeyInsights = () => {
               </div>
               
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-                <div className="bg-amber-400 rounded-full p-3 w-fit mb-4">
-                  <TrendingUp className="w-6 h-6 text-white" />
+                <div className="bg-gradient-to-br from-amber-100 to-orange-100 rounded-2xl p-3 w-fit mb-4 hover:from-amber-200 hover:to-orange-200 transition-all duration-300 hover:scale-110 hover:rotate-6 group">
+                  <TrendingUp className="w-6 h-6 text-amber-600 group-hover:text-orange-600 transition-colors duration-300" />
                 </div>
                 <h4 className="text-lg font-bold mb-3">Rethink Metrics</h4>
                 <ul className="space-y-2 text-sm text-blue-100">
@@ -146,8 +154,8 @@ const KeyInsights = () => {
               </div>
               
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-                <div className="bg-blue-400 rounded-full p-3 w-fit mb-4">
-                  <Lightbulb className="w-6 h-6 text-white" />
+                <div className="bg-gradient-to-br from-blue-100 to-indigo-100 rounded-2xl p-3 w-fit mb-4 hover:from-blue-200 hover:to-indigo-200 transition-all duration-300 hover:scale-110 hover:rotate-6 group">
+                  <Lightbulb className="w-6 h-6 text-blue-600 group-hover:text-indigo-600 transition-colors duration-300" />
                 </div>
                 <h4 className="text-lg font-bold mb-3">Future Approach</h4>
                 <ul className="space-y-2 text-sm text-blue-100">

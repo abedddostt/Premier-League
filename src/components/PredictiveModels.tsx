@@ -93,8 +93,8 @@ const PredictiveModels = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <div className="flex justify-center mb-6">
-              <div className="bg-blue-100 rounded-full p-4">
-                <Brain className="w-12 h-12 text-blue-600" />
+              <div className="bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl p-6 hover:from-blue-200 hover:to-purple-200 transition-all duration-300 hover:scale-110 hover:rotate-3">
+                <Brain className="w-12 h-12 text-blue-600 hover:text-purple-600 transition-colors duration-300" />
               </div>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -130,7 +130,17 @@ const PredictiveModels = () => {
             {/* Model Performance */}
             <div className="bg-white rounded-xl shadow-lg p-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-                <BarChart3 className={getColorClasses(currentData.color, 'text')} />
+                <div className={`rounded-2xl p-2 bg-gradient-to-br ${
+                  currentData.color === 'red' ? 'from-red-100 to-orange-100 hover:from-red-200 hover:to-orange-200' :
+                  currentData.color === 'emerald' ? 'from-emerald-100 to-teal-100 hover:from-emerald-200 hover:to-teal-200' :
+                  'from-blue-100 to-indigo-100 hover:from-blue-200 hover:to-indigo-200'
+                } transition-all duration-300 hover:scale-110 hover:rotate-6 group`}>
+                  <BarChart3 className={`w-6 h-6 ${
+                    currentData.color === 'red' ? 'text-red-600 group-hover:text-orange-600' :
+                    currentData.color === 'emerald' ? 'text-emerald-600 group-hover:text-teal-600' :
+                    'text-blue-600 group-hover:text-indigo-600'
+                  } transition-colors duration-300`} />
+                </div>
                 Model Performance
               </h3>
               

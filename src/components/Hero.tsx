@@ -16,8 +16,8 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-6 py-20 flex flex-col justify-center min-h-screen">
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex justify-center mb-8">
-            <div className="bg-white/10 backdrop-blur-sm rounded-full p-4">
-              <BarChart3 className="w-12 h-12 text-emerald-400" />
+            <div className="bg-gradient-to-br from-emerald-100 to-blue-100 rounded-2xl p-6 hover:from-emerald-200 hover:to-blue-200 transition-all duration-300 hover:scale-110 hover:rotate-3">
+              <BarChart3 className="w-12 h-12 text-emerald-600 hover:text-blue-600 transition-colors duration-300" />
             </div>
           </div>
           
